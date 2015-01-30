@@ -579,12 +579,9 @@ Use search to find needed section.
 -->
 		<!-- Content here -->
 		<div class="page-header">
-			<div class="row">
 				<!-- Page header, center on small screens -->
 				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
-			</div>
 		</div><!-- / .page-header -->
-		
 		
 		<div class="panel colourable">
 					<div class="panel-heading">
@@ -598,49 +595,55 @@ Use search to find needed section.
 						</div> <!-- / .panel-heading-controls -->
 					</div> <!-- / .panel-heading -->
 					
-					<div class="panel-body scrolling">
-						<div class="row">
-							<div id="panels" class="col-sm-2">
-								<div class="panel panel-info panel-dark widget-profile drag" draggable="true">
+					<div class="panel-body">
+						<div class="panel-group panel-group-info col-md-2">
+							<div class="panel">
+								<div class="panel-info panel-dark widget-profile">
 									<div class="panel-heading">
-										<div class="widget-profile-bg-icon"><i class="fa fa-bar-chart-o"></i></div>
-										<div class="widget-profile-header">
-											<span>Financeiro</span><br>
-											Gerenciar Finanças
-										</div>
-									</div>
-									<div class="list-group">
-										<a class="list-group-item" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-										<a class="list-group-item" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-										<a class="list-group-item" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-									</div>
-								</div> <!-- / .panel -->
-							</div>
-							
-							<div id="panels" class="col-sm-2">
-								<div class="panel panel-info panel-dark widget-profile drag" draggable="true">
-									<div class="panel-heading">
-										<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-										<div class="widget-profile-header">
-											<span>Usuários</span><br>
+									<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+										<a href="#collapseOne-success" data-parent="#accordion-success-example" data-toggle="collapse" class="accordion-toggle collapsed no-bg">
+											<span class="text-bg">Usuários</span><br>
 											Gerenciar Usuários
-										</div>
-									</div>
-									<div class="list-group">
-										<a class="list-group-item" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-										<a class="list-group-item" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-										<a class="list-group-item" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-									</div>
-								</div> <!-- / .panel -->
-							</div>
+										</a>
+									</div> <!-- / .panel-heading -->
+								</div>
+								<div class="panel-collapse collapse" id="collapseOne-success" style="height:0px;">
+									<div class="panel-body rmspace">
+												<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+												<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+												<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+									</div> <!-- / .panel-body -->
+								</div>
+							</div> <!-- / .panel -->
+						</div>
+						<div class="panel-group panel-group-danger col-md-2">
+							<div class="panel">
+								<div class="panel-danger panel-dark widget-profile">
+									<div class="panel-heading">
+									<div class="widget-profile-bg-icon"><i class="fa fa-dollar"></i></div>
+										<a href="#collapseTwo-danger" data-parent="#accordion-danger-example" data-toggle="collapse" class="accordion-toggle collapsed no-bg">
+											<span class="text-bg">Financeiro</span><br>
+											Gerenciar Finanças
+										</a>
+									</div> <!-- / .panel-heading -->
+								</div>
+								<div class="panel-collapse collapse" id="collapseTwo-danger">
+									<div class="panel-body rmspace">
+												<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+												<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+												<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+									</div> <!-- / .panel-body -->
+								</div>
+							</div> <!-- / .panel -->
 						</div>
 					</div>
-				</div>
+					
+		</div><!-- / fim Modulos Projetos -->
 		
 		<div class="panel colourable">
 					<div class="panel-heading">
 						<span class="panel-title">Módulos Recentes</span>
-						<div style="width:22%" class="panel-heading-controls"> <!-- Inline width (Chrome/IE) -->
+						<div class="panel-heading-controls chrhack"> <!-- Inline width (Chrome/IE) -->
 							<form action="#">
 								<div class="input-group input-group-sm">
 									<input type="text" name="s" placeholder="Pesquisar..." class="form-control">
@@ -654,27 +657,10 @@ Use search to find needed section.
 						</div> <!-- / .panel-heading-controls -->
 					</div> <!-- / .panel-heading -->
 					<div class="panel-body">
-						<div class="row">
-							<div class="col-sm-2">
-								<div class="panel panel-danger panel-dark widget-profile">
-									<div class="panel-heading">
-										<div class="widget-profile-bg-icon"><i class="fa fa-dollar"></i></div>
-										<div class="widget-profile-header">
-											<span>Aquisições</span><br>
-											Gerenciar Aquisições
-										</div>
-									</div>
-									<div class="list-group">
-										<a class="list-group-item" href="#"><i class="fa fa-hand-o-down list-group-icon"></i>Importar</a>
-									</div>
-								</div> <!-- / .panel -->
-							</div>
-						</div>
+							
 					</div>
 		</div>
-
 	</div> <!-- / #content-wrapper -->
-	
 	<div id="main-menu-bg"></div>
 </div> <!-- / #main-wrapper -->
 
