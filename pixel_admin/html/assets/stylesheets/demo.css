@@ -1,0 +1,53 @@
+/* Define altura padrão para as caixas dos módulos */
+ .card {
+height:105px;
+}
+
+/* Define altura padrão para as caixas dos módulos no Firefox */
+@-moz-document url-prefix() { 
+  .card {
+	height:107px;
+  }
+}
+
+.card:nth-child(1) {
+  margin-left: -3px;
+  margin-right: 0px;
+}
+
+.card:nth-child(2),
+.card:nth-child(3) {
+  margin-right: 10px;
+}
+
+/* card fronts and backs */
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card__front,
+.card__back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.card__back {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+/* click effect */
+.card.effect__click.flipped .card__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card.effect__click.flipped .card__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
