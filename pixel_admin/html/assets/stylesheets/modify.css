@@ -10,3 +10,27 @@
 		width:22%;
 	}
 }
+
+/* Sortable BRA Interface*/
+.sortable.grid {
+	overflow: hidden;
+}
+.sortable.col-md-4, .exclude.col-md-4, .handles .col-md-4{
+	list-style: none;
+}
+
+li.disabled {
+	opacity: 0.5;
+}
+
+.sortable.grid.col-md-4{
+	float: left;
+}
+li.highlight {
+	background: #FEE25F;
+}
+
+li.sortable-placeholder {
+	border: 1px dashed #CCC;
+	background: none;
+}

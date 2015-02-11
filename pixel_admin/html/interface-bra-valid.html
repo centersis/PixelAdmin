@@ -716,8 +716,8 @@ Use search to find needed section.
 											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
 										</div>
 									</div>
-									<div class="panel-body text-xs">
-										<div class="col-md-4">
+									<div class="panel-body text-xs connected list sortable grid">
+										<div class="col-md-4 highlight">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -733,7 +733,7 @@ Use search to find needed section.
 												</div>
 											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
 										</div>
-										<div class="col-md-4">
+										<div class="col-md-4 highlight">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -749,7 +749,7 @@ Use search to find needed section.
 												</div>
 											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
 										</div>
-											<div class="col-md-4">
+											<div class="col-md-4 highlight">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -765,7 +765,7 @@ Use search to find needed section.
 												</div>
 											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
 										</div>
-											<div class="col-md-4">
+											<div class="col-md-4 highlight">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -818,13 +818,13 @@ Use search to find needed section.
 							<div class="col-md-6">
 								<div class="panel panel-info panel-dark scrolling">
 									<div class="panel-heading">
-										<span class="panel-title">Módulos Administrativos</span>
+										<span class="panel-title">Módulos Permissões</span>
 										<div class="panel-heading-controls">
 											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
 										</div>
 									</div>
-									<div class="panel-body text-xs">
-										<div class="col-md-4">
+									<div class="panel-body text-xs connected list no2 sortable grid">
+										<div class="col-md-4 highlight">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -840,7 +840,6 @@ Use search to find needed section.
 												</div>
 											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
 										</div>
-	
 									</div>
 								</div>
 							</div>
@@ -872,9 +871,25 @@ Use search to find needed section.
 <script src="assets/javascripts/demo.js"></script>
 <script src="assets/javascripts/fusionad.js"></script>
 
+<!-- Sortable BRA Interface -->
+
+<script src="assets/javascripts/sortable.js"></script>
+
 
 <script type="text/javascript">
 	init.push(function () {
+		$(function() {
+			$('.sortable').sortable();
+			$('.handles').sortable({
+				handle: 'span'
+			});
+			$('.connected').sortable({
+				connectWith: '.connected'
+			});
+			$('.exclude').sortable({
+				items: ':not(.disabled)'
+			});
+		});
 	})
 	window.PixelAdmin.start(init);
 </script>
