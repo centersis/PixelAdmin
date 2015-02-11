@@ -705,7 +705,7 @@ Use search to find needed section.
 							<!-- Acrescenta rolagem no grupo de módulos-->
 							<script>
 								init.push(function () {
-									$('.scrolling > .panel-body').slimScroll({ height: 150, alwaysVisible: true, color: '#888',allowPageScroll: true });
+									$('.scrolling > .panel-body').slimScroll({height:150 , alwaysVisible: true, color: '#888',allowPageScroll: true });
 								})
 							</script>
 							<div class="col-md-6">
@@ -718,6 +718,54 @@ Use search to find needed section.
 									</div>
 									<div class="panel-body text-xs">
 										<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+										<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+											<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+											<div class="col-md-4">
 											<div class="panel panel-info panel-dark widget-profile card effect__click">
 												<div class="panel-heading card__front">
 													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
@@ -824,30 +872,11 @@ Use search to find needed section.
 <script src="assets/javascripts/demo.js"></script>
 <script src="assets/javascripts/fusionad.js"></script>
 
+
 <script type="text/javascript">
-init.push(function () {
-    // Arrastar
-    $('.drag').draggable({
-        // Conecta com a função de reordenar
-        connectToSortable: '.drop-container',
-        helper: 'clone'
-    });
- 
-    // Soltar e reordenar
-    $('.drop-container').sortable({
-        placeholder: 'placeholder',
-        activate: function(event, ui){
-            $('.drop-container p').remove();
-        }
-    });
- 
-    // Lixeira
-    $('.lixeira').droppable({
-        hoverClass: 'lixeira-ativa',
-        drop: function(event, ui) {
-            $(ui.draggable).remove();
-        }
-    });
+	init.push(function () {
+	})
+	window.PixelAdmin.start(init);
 </script>
 </body>
 </html>
