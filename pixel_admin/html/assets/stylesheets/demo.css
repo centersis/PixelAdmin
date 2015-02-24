@@ -1,26 +1,12 @@
-/* Define altura padrão para as caixas dos módulos */
- .card {
-height:105px;
+/* Propriedades Especificas - Google Chrome  */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
 }
 
-/* Define altura padrão para as caixas dos módulos no Firefox */
+/* Propriedades Especificas - Mozilla Firefox  */
 @-moz-document url-prefix() { 
-  .card {
-	height:107px;
-  }
 }
 
-.card:nth-child(1) {
-  margin-left: -3px;
-  margin-right: 0px;
-}
-
-.card:nth-child(2),
-.card:nth-child(3) {
-  margin-right: 10px;
-}
-
-/* card fronts and backs */
+/* Flip Frente - Verso */
 .card__front,
 .card__back {
   position: absolute;
@@ -32,8 +18,8 @@ height:105px;
 .card__back {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s;
-          transition: transform 0.3s;
+  -webkit-transition: -webkit-transform 0.6s;
+          transition: transform 0.6s;
 }
 
 .card__back {
