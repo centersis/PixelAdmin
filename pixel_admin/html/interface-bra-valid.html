@@ -5,15 +5,16 @@ TABLE OF CONTENTS.
 
 Use search to find needed section.
 
-=====================================================
+=============================================================
 
-|  1. $BODY                 |  Body                 |
-|  2. $MAIN_NAVIGATION      |  Main navigation      |
-|  3. $NAVBAR_ICON_BUTTONS  |  Navbar Icon Buttons  |
-|  4. $MAIN_MENU            |  Main menu            |
-|  5. $CONTENT              |  Content              |
+|  1. $BODY                     |  Body                     |
+|  2. $MAIN_NAVIGATION          |  Main navigation          |
+|  3. $NAVBAR_ICON_BUTTONS      |  Navbar Icon Buttons      |
+|  4. $MAIN_MENU                |  Main menu                |
+|  5. $JQUERY_VALIDATION        |  jQuery Validation        |
+|  6. $WIZARD_FORMS_VALIDATION  |  Wizard forms validation  |
 
-=====================================================
+=============================================================
 
 -->
 
@@ -24,17 +25,16 @@ Use search to find needed section.
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Interfaces BRA - Módulos</title>
+	<title>Interfaces BRA - Consultoria</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 	<!-- Open Sans font from Google CDN -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
 
 	<!-- Pixel Admin's stylesheets -->
-	<link href="assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/modify.css" rel="stylesheet" type="text/css">
@@ -55,8 +55,8 @@ Use search to find needed section.
 <!-- 1. $BODY ======================================================================================
 	
 	Body
-	Classes:
 
+	Classes:
 	* 'theme-{THEME NAME}'
 	* 'right-to-left'      - Sets text direction to right-to-left
 	* 'main-menu-right'    - Places the main menu on the right side
@@ -65,12 +65,10 @@ Use search to find needed section.
 	* 'main-menu-fixed'    - Fixes the main menu
 	* 'main-menu-animated' - Animate main menu
 -->
-<body class="theme-default main-menu-animated no-main-menu">
+<body class="theme-default main-menu-animated">
 
 <script>var init = [];</script>
-<!-- Demo script --> 
-
-<script src="assets/demo/demo.js"></script> <!-- / Demo script -->
+<!-- Demo script --> <script src="assets/demo/demo.js"></script> <!-- / Demo script -->
 
 <div id="main-wrapper">
 
@@ -190,7 +188,7 @@ Use search to find needed section.
 								</div> <!-- / .dropdown-menu -->
 							</li>
 							<li class="nav-icon-btn nav-icon-btn-success dropdown">
-								<a href="mail.ru" class="dropdown-toggle" data-toggle="dropdown">
+								<a href="#messages" class="dropdown-toggle" data-toggle="dropdown">
 									<span class="label">10</span>
 									<i class="nav-icon fa fa-envelope"></i>
 									<span class="small-screen-text">Income messages</span>
@@ -323,7 +321,7 @@ Use search to find needed section.
 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
-									<img src="assets/demo/avatars/1.jpg" alt="">
+									<img src="assets/demo/avatars/1.jpg">
 									<span>John Doe</span>
 								</a>
 								<ul class="dropdown-menu">
@@ -583,8 +581,115 @@ Use search to find needed section.
 
 
 	<div id="content-wrapper">
-<!-- 5. $CONTENT ===================================================================================
--->		
+
+		<!-- Page Header -->
+		<div class="page-header">
+				<!-- Page header, center on small screens -->
+				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
+		</div><!-- / .page-header -->
+
+		<div class="row pr">
+			<div class="col-sm-12">
+
+<!-- 5. $JQUERY_VALIDATION =========================================================================
+
+				jQuery Validation
+-->
+				<!-- Javascript -->
+				<script>
+					init.push(function () {
+						$("#jq-validation-phone").mask("(999) 999-9999");
+						$('#jq-validation-select2').select2({ allowClear: true, placeholder: 'Select a country...' }).change(function(){
+							$(this).valid();
+						});
+						$('#jq-validation-select2-multi').select2({ placeholder: 'Filtro...' }).change(function(){
+							$(this).valid();
+						});
+
+						// Add phone validator
+						$.validator.addMethod(
+							"phone_format",
+							function(value, element) {
+								var check = false;
+								return this.optional(element) || /^\(\d{3}\)[ ]\d{3}\-\d{4}$/.test(value);
+							},
+							"Invalid phone number."
+						);
+
+						// Setup validation
+						$("#jq-validation-form").validate({
+							ignore: '.ignore, .select2-input',
+							focusInvalid: false,
+							rules: {
+								'jq-validation-email': {
+								  required: true,
+								  email: true
+								},
+								'jq-validation-password': {
+									required: true,
+									minlength: 6,
+									maxlength: 20
+								},
+								'jq-validation-password-confirmation': {
+									required: true,
+									minlength: 6,
+									equalTo: "#jq-validation-password"
+								},
+								'jq-validation-required': {
+									required: true
+								},
+								'jq-validation-url': {
+									required: true,
+									url: true
+								},
+								'jq-validation-phone': {
+									required: true,
+									phone_format: true
+								},
+								'jq-validation-select': {
+									required: true
+								},
+								'jq-validation-multiselect': {
+									required: true,
+									minlength: 2
+								},
+								'jq-validation-select2': {
+									required: true
+								},
+								'jq-validation-select2-multi': {
+									required: false,
+									minlength: 1
+								},
+								'jq-validation-text': {
+									required: true
+								},
+								'jq-validation-simple-error': {
+									required: true
+								},
+								'jq-validation-dark-error': {
+									required: true
+								},
+								'jq-validation-radios': {
+									required: true
+								},
+								'jq-validation-checkbox1': {
+									require_from_group: [1, 'input[name="jq-validation-checkbox1"], input[name="jq-validation-checkbox2"]']
+								},
+								'jq-validation-checkbox2': {
+									require_from_group: [1, 'input[name="jq-validation-checkbox1"], input[name="jq-validation-checkbox2"]']
+								},
+								'jq-validation-policy': {
+									required: true
+								}
+							},
+							messages: {
+								'jq-validation-policy': 'You must check it!'
+							}
+						});
+					});
+				</script>
+				<!-- / Javascript -->
+
 				<!-- Seleção de Módulo -->
 				<div id="uidemo-modals-alerts-info-sm" class="modal modal-alert modal-info fade">
 					<div class="modal-dialog">
@@ -679,176 +784,106 @@ Use search to find needed section.
 				</div> <!-- / .modal -->
 				<!-- Módulo baseado em Tabela -->
 
-		<!-- Page Header -->
-		<div class="page-header">
-				<!-- Page header, center on small screens -->
-				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
-		</div><!-- / .page-header -->
+		<script>
+			init.push(function () {
+				$('#main-navbar-notifications').slimScroll({ height: 250 });
+			});
+		</script>
 		
 		<!-- Inicio Módulos Projetos -->
-		
-		<div class="panel colourable">
-					<div class="panel-heading">
-						<span class="panel-title">Módulos Projeto</span>
-						<div class="panel-heading-controls">
-							<form action="#">
-								<div class="btn-group btn-group-xs">
-								<button class="btn btn-xs btn-labeled btn-info" data-target="#uidemo-modals-alerts-info-sm" data-toggle="modal">
-									<span class="btn-label icon fa fa-plus"></span>Novo Módulo</button>
-								</div><!-- / .input-group -->
-							</form>
-						</div> <!-- / .panel-heading-controls -->
-					</div> <!-- / .panel-heading -->
-					
+		<div class="row pr">
+			<div class="col-md-9 mp">
+				<!-- Acrescenta rolagem no grupo de módulos-->
+							<script>
+								init.push(function () {
+									$('.panel.colourable').slimScroll({height:'500px', alwaysVisible: true, color: '#888',allowPageScroll: true });
+								})
+							</script>
+				<div class="panel colourable mp">
+								<div class="panel-heading">
+									<span class="panel-title">Módulos do Projeto</span>
+									<div class="panel-heading-controls chrhack">
+										<form action="#">
+											<div class="input-group input-group-sm">
+												<input type="text" name="s" placeholder="Pesquisar..." class="form-control">
+												<span class="input-group-btn">
+													<button type="submit" class="btn">
+														<span class="fa fa-search"></span>
+													</button>
+												</span>
+											</div> <!-- / .input-group -->
+										</form>
+									</div> <!-- / .panel-heading-controls -->
+								</div> <!-- / .panel-heading -->
+							
+							<div class="panel-body">
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
+															<i class="fa fa-dollar"></i>&nbsp;&nbsp;FINANCEIRO
+														</div>
+													</div> <!-- /.statpanel -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+												</div>
+											</form>
+										</div>
+							</div>
+				</div><!-- / .panel colourable-->
+			</div><!-- / .col-md-9 -->
+			
+			<div class="col-md-3 fp">
+				<div class="panel colourable fm">
+							<div class="panel-heading">
+								<span class="panel-title">Filtros</span>
+								<div class="panel-heading-controls">
+									<form action="#">
+										<div class="btn-group btn-group-xs">
+										<button class="btn btn-xs btn-labeled btn-info" data-target="#uidemo-modals-alerts-info-sm" data-toggle="modal">
+											<span class="btn-label icon fa fa-plus"></span>Módulo</button>
+										</div><!-- / .input-group -->
+									</form>
+								</div> <!-- / .panel-heading-controls -->
+							</div> <!-- / .panel-heading -->
+						
 					<div class="panel-body">
-						<div class="row">
-							<!-- Acrescenta rolagem no grupo de módulos-->
-							<script>
-								init.push(function () {
-									$('.scrolling > .panel-body').slimScroll({height:150 , alwaysVisible: true, color: '#888',allowPageScroll: true });
-								})
-							</script>
-							<div class="col-md-6">
-								<div class="panel panel-info panel-dark scrolling">
-									<div class="panel-heading">
-										<span class="panel-title">Módulos Administrativos</span>
-										<div class="panel-heading-controls">
-											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
-										</div>
-									</div>
-									<div class="panel-body text-xs connected list sortable grid">
-										<div class="col-md-4 highlight">
-											<div class="panel panel-info panel-dark widget-profile card effect__click">
-												<div class="panel-heading card__front">
-													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-													<div class="widget-profile-header">
-														<span>Financeiro</span><br>
-														Gerenciar Finanças
-													</div>
-												</div> <!-- / .panel-heading -->
-												<div class="list-group card__back">
-													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-												</div>
-											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
-										</div>
-										<div class="col-md-4 highlight">
-											<div class="panel panel-info panel-dark widget-profile card effect__click">
-												<div class="panel-heading card__front">
-													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-													<div class="widget-profile-header">
-														<span>Financeiro</span><br>
-														Gerenciar Finanças
-													</div>
-												</div> <!-- / .panel-heading -->
-												<div class="list-group card__back">
-													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-												</div>
-											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
-										</div>
-											<div class="col-md-4 highlight">
-											<div class="panel panel-info panel-dark widget-profile card effect__click">
-												<div class="panel-heading card__front">
-													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-													<div class="widget-profile-header">
-														<span>Financeiro</span><br>
-														Gerenciar Finanças
-													</div>
-												</div> <!-- / .panel-heading -->
-												<div class="list-group card__back">
-													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-												</div>
-											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
-										</div>
-											<div class="col-md-4 highlight">
-											<div class="panel panel-info panel-dark widget-profile card effect__click">
-												<div class="panel-heading card__front">
-													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-													<div class="widget-profile-header">
-														<span>Financeiro</span><br>
-														Gerenciar Finanças
-													</div>
-												</div> <!-- / .panel-heading -->
-												<div class="list-group card__back">
-													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-												</div>
-											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
-										</div>
-									</div>
+						<form class="form-horizontal" id="jq-validation-form">
+								<div class="form-group">
+									<label for="jq-validation-select2-multi" class="col-sm-3 control-label"></label>
+										<select class="form-control" name="jq-validation-select2-multi" id="jq-validation-select2-multi" multiple="multiple">
+											<optgroup label="Usuarios">
+												<option value="pitons">Inserção</option>
+												<option value="cams">Exclusão</option>
+												<option value="nuts">Pesquisa</option>
+											</optgroup>
+											<optgroup label="Aquisições">
+												<option value="skis">Entrada Produtos</option>
+												<option value="skins">Venda Produtos</option>
+												<option value="poles">Negociação</option>
+											</optgroup>
+										</select>
 								</div>
-							</div>
-						</div>
-					</div><!-- / .panel -->
-		</div><!-- / .panel colourable -->
-		
-		<!-- Inicio Módulos Recentes -->
-		
-		<div class="panel colourable">
-					<div class="panel-heading">
-						<span class="panel-title">Módulos Recentes</span>
-						<div class="panel-heading-controls chrhack">
-							<form action="#">
-								<div class="input-group input-group-sm">
-									<input type="text" name="s" placeholder="Pesquisar..." class="form-control">
-									<span class="input-group-btn">
-										<button type="submit" class="btn">
-											<span class="fa fa-search"></span>
-										</button>
-									</span>
-								</div> <!-- / .input-group -->
-							</form>
-						</div> <!-- / .panel-heading-controls -->
-					</div> <!-- / .panel-heading -->
-					
-				<div class="panel-body">
-						<div class="row">
-							<!-- Acrescenta rolagem no grupo de módulos-->
-							<script>
-								init.push(function () {
-									$('.scrolling > .panel-body').slimScroll({ height: 150, alwaysVisible: true, color: '#888',allowPageScroll: true });
-								})
-							</script>
-							<div class="col-md-6">
-								<div class="panel panel-info panel-dark scrolling">
-									<div class="panel-heading">
-										<span class="panel-title">Módulos Permissões</span>
-										<div class="panel-heading-controls">
-											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
-										</div>
-									</div>
-									<div class="panel-body text-xs connected list no2 sortable grid">
-										<div class="col-md-4 highlight">
-											<div class="panel panel-info panel-dark widget-profile card effect__click">
-												<div class="panel-heading card__front">
-													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
-													<div class="widget-profile-header">
-														<span>Financeiro</span><br>
-														Gerenciar Finanças
-													</div>
-												</div> <!-- / .panel-heading -->
-												<div class="list-group card__back">
-													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
-													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
-												</div>
-											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!-- / .panel -->
-		</div><!-- / .panel colourable -->
-		
+								<hr class="panel-wide">
+								<ul style="background: #478e9e" class="breadcrumb breadcrumb-dark">
+									<li><a href="#">Projetos</a></li>
+									<li><a href="#">Grupo</a></li>
+									<li class="active"><a href="#">Módulo</a></li>
+								</ul>
+						</form>
+					</div>
+				</div>
+			</div><!-- col-md-3 -->
+<!-- /5. $JQUERY_VALIDATION -->
+			</div>
+		</div>
 	</div> <!-- / #content-wrapper -->
-	
 	<div id="main-menu-bg"></div>
 </div> <!-- / #main-wrapper -->
 
@@ -860,38 +895,21 @@ Use search to find needed section.
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">'+"<"+"/script>"); </script>
 <![endif]-->
 
-<script src="jquery.transit.js"></script>
 
 <!-- Pixel Admin's javascripts -->
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/pixel-admin.min.js"></script>
 
 <!-- Flip Animation Script -->
-
 <script src="assets/javascripts/demo.js"></script>
 <script src="assets/javascripts/fusionad.js"></script>
 
-<!-- Sortable BRA Interface -->
-
-<script src="assets/javascripts/sortable.js"></script>
-
-
 <script type="text/javascript">
 	init.push(function () {
-		$(function() {
-			$('.sortable').sortable();
-			$('.handles').sortable({
-				handle: 'span'
-			});
-			$('.connected').sortable({
-				connectWith: '.connected'
-			});
-			$('.exclude').sortable({
-				items: ':not(.disabled)'
-			});
-		});
+		// Javascript code here
 	})
 	window.PixelAdmin.start(init);
 </script>
+
 </body>
 </html>
