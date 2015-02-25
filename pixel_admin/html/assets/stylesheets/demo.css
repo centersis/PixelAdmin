@@ -6,6 +6,8 @@
 @-moz-document url-prefix() { 
 }
 
+.card:hover{cursor:pointer;}
+
 /* Flip Frente - Verso */
 .card__front,
 .card__back {

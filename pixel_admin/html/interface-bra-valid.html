@@ -795,21 +795,21 @@ Use search to find needed section.
 		</script>
 		
 		<!-- Inicio Módulos Projetos -->
-		<div class="row pr">
-			<div class="col-md-9 mp">
-				<!-- Acrescenta rolagem no grupo de módulos-->
+		<div class="row">
+			<div class="col-md-9">
+				<!-- Acrescenta rolagem no grupo de módulos e filtros-->
 							<script>
 								init.push(function () {
 									$('.panel.colourable').slimScroll({height:'500px', alwaysVisible: true, color: '#888',allowPageScroll: true });
 								})
 							</script>
-				<div class="panel colourable mp">
+				<div class="panel colourable" id="users">
 								<div class="panel-heading">
 									<span class="panel-title">Módulos do Projeto</span>
 									<div class="panel-heading-controls chrhack">
 										<form action="#">
 											<div class="input-group input-group-sm">
-												<input type="text" name="s" placeholder="Pesquisar..." class="form-control">
+												<input type="text" name="s" placeholder="Pesquisar..." class="form-control search">
 												<span class="input-group-btn">
 													<button type="submit" class="btn">
 														<span class="fa fa-search"></span>
@@ -820,13 +820,13 @@ Use search to find needed section.
 									</div> <!-- / .panel-heading-controls -->
 								</div> <!-- / .panel-heading -->
 							
-							<div class="panel-body">
+							<div class="panel-body list">
 										<div class="col-md-3">
 											<form action="#">
 												<div class="stat-panel text-center card effect__click">
 													<div class="stat-row">
-														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-															<i class="fa fa-dollar"></i>&nbsp;&nbsp;FINANCEIRO
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+															<i class="fa fa-dollar"></i>&nbsp; FINANCEIRO
 														</div>
 													</div> <!-- /.statpanel -->
 													<div class="card__back">
@@ -834,17 +834,59 @@ Use search to find needed section.
 																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
 																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
 																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
 															</div>
 													</div> <!-- /.card__back -->
 												</div>
 											</form>
-										</div>
-							</div>
+										</div><!-- col-md-3 -->
+										
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+															<i class="fa fa-dollar"></i>&nbsp; ADMINISTRATIVO
+														</div>
+													</div> <!-- /.statpanel -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+												</div>
+											</form>
+										</div><!-- col-md-3 -->
+										
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+															<i class="fa fa-dollar"></i>&nbsp; PAGAMENTOS
+														</div>
+													</div> <!-- /.statpanel -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+												</div>
+											</form>
+										</div><!-- col-md-3 -->
+										
+							</div><!-- /.panel-body -->
 				</div><!-- / .panel colourable-->
 			</div><!-- / .col-md-9 -->
 			
-			<div class="col-md-3 fp">
-				<div class="panel colourable fm">
+			<div class="col-md-3">
+				<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">Filtros</span>
 								<div class="panel-heading-controls">
@@ -860,7 +902,6 @@ Use search to find needed section.
 					<div class="panel-body">
 						<form class="form-horizontal" id="jq-validation-form">
 								<div class="form-group">
-									<label for="jq-validation-select2-multi" class="col-sm-3 control-label"></label>
 										<select class="form-control" name="jq-validation-select2-multi" id="jq-validation-select2-multi" multiple="multiple">
 											<optgroup label="Usuarios">
 												<option value="pitons">Inserção</option>
@@ -875,11 +916,11 @@ Use search to find needed section.
 										</select>
 								</div>
 								<hr class="panel-wide">
-								<ul style="background: #478e9e" class="breadcrumb breadcrumb-dark">
-									<li><a href="#">Projetos</a></li>
-									<li><a href="#">Grupo</a></li>
-									<li class="active"><a href="#">Módulo</a></li>
-								</ul>
+									<div role="toolbar" class="btn-toolbar">
+										<div class="btn-group btn-group-justified btn-group-sm">
+											<a class="btn btn-primary" href="#">Grupo &raquo; Projeto &raquo; Módulo</a>
+										</div>
+									</div>
 								<hr class="panel-wide">
 						</form>
 					</div>
@@ -908,6 +949,10 @@ Use search to find needed section.
 <!-- Flip Animation Script -->
 <script src="assets/javascripts/demo.js"></script>
 <script src="assets/javascripts/fusionad.js"></script>
+
+<!-- List Filter Módulos -->
+<script src="assets/javascripts/list.min.js"></script>
+<script src="assets/javascripts/listFilter.js"></script>
 
 <script type="text/javascript">
 	init.push(function () {
