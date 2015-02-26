@@ -1,23 +1,4 @@
 <!DOCTYPE html>
-<!--
-
-TABLE OF CONTENTS.
-
-Use search to find needed section.
-
-=============================================================
-
-|  1. $BODY                     |  Body                     |
-|  2. $MAIN_NAVIGATION          |  Main navigation          |
-|  3. $NAVBAR_ICON_BUTTONS      |  Navbar Icon Buttons      |
-|  4. $MAIN_MENU                |  Main menu                |
-|  5. $JQUERY_VALIDATION        |  jQuery Validation        |
-|  6. $WIZARD_FORMS_VALIDATION  |  Wizard forms validation  |
-
-=============================================================
-
--->
-
 
 <!--[if IE 8]>         <html class="ie8"> <![endif]-->
 <!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
@@ -26,28 +7,28 @@ Use search to find needed section.
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<head>
-	<title>Interfaces BRA</title>
-=======
 	<title>Interfaces BRA - Consultoria</title>
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-	<!-- Open Sans font from Google CDN -->
+	<!-- Obtém fonte de texto Open Sans do Google CDN -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
 
-	<!-- Pixel Admin's stylesheets -->
+	<!-- Folhas de estilo padrão do Pixel Admin -->
 	<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/stylesheets/modify.css" rel="stylesheet" type="text/css">
 	
-	<!-- Flip Animation CSS-->
+	<!-- @autor:  Guilherme Zazu Simões
+		 @função: Importa folha de estilos padrão do efeito Flip dos módulos
+	-->
 	<link href="assets/stylesheets/demo.css" rel="stylesheet" type="text/css">
 	
-	<!-- modernizr -->
-	<script src="assets/javascripts/modernizr.js"></script>
+	<!-- @autor:  Guilherme Zazu Simões
+		 @função: Importa folha de estilos que define comportamento padrão de elementos do painel de Módulos
+	-->
+	<link href="assets/stylesheets/modify.css" rel="stylesheet" type="text/css">
 
 	<!--[if lt IE 9]>
 		<script src="assets/javascripts/ie.min.js"></script>
@@ -55,32 +36,11 @@ Use search to find needed section.
 
 </head>
 
-
-<!-- 1. $BODY ======================================================================================
-	
-	Body
-
-	Classes:
-	* 'theme-{THEME NAME}'
-	* 'right-to-left'      - Sets text direction to right-to-left
-	* 'main-menu-right'    - Places the main menu on the right side
-	* 'no-main-menu'       - Hides the main menu
-	* 'main-navbar-fixed'  - Fixes the main navigation
-	* 'main-menu-fixed'    - Fixes the main menu
-	* 'main-menu-animated' - Animate main menu
--->
 <body class="theme-default main-menu-animated">
-
 <script>var init = [];</script>
-<!-- Demo script --> <script src="assets/demo/demo.js"></script> <!-- / Demo script -->
+
 
 <div id="main-wrapper">
-
-
-<!-- 2. $MAIN_NAVIGATION ===========================================================================
-
-	Main navigation
--->
 	<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
 		<!-- Main menu toggle -->
 		<button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
@@ -119,36 +79,13 @@ Use search to find needed section.
 
 					<div class="right clearfix">
 						<ul class="nav navbar-nav pull-right right-navbar-nav">
-
-<!-- 3. $NAVBAR_ICON_BUTTONS =======================================================================
-
-							Navbar Icon Buttons
-
-							NOTE: .nav-icon-btn triggers a dropdown menu on desktop screens only. On small screens .nav-icon-btn acts like a hyperlink.
-
-							Classes:
-							* 'nav-icon-btn-info'
-							* 'nav-icon-btn-success'
-							* 'nav-icon-btn-warning'
-							* 'nav-icon-btn-danger' 
--->
 							<li class="nav-icon-btn nav-icon-btn-danger dropdown">
 								<a href="#notifications" class="dropdown-toggle" data-toggle="dropdown">
 									<span class="label">5</span>
 									<i class="nav-icon fa fa-bullhorn"></i>
 									<span class="small-screen-text">Notifications</span>
 								</a>
-
-								<!-- NOTIFICATIONS -->
 								
-								<!-- Javascript -->
-								<script>
-									init.push(function () {
-										$('#main-navbar-notifications').slimScroll({ height: 250 });
-									});
-								</script>
-								<!-- / Javascript -->
-
 								<div class="dropdown-menu widget-notifications no-padding" style="width: 300px">
 									<div class="notifications-list" id="main-navbar-notifications">
 
@@ -197,16 +134,6 @@ Use search to find needed section.
 									<i class="nav-icon fa fa-envelope"></i>
 									<span class="small-screen-text">Income messages</span>
 								</a>
-
-								<!-- MESSAGES -->
-								
-								<!-- Javascript -->
-								<script>
-									init.push(function () {
-										$('#main-navbar-messages').slimScroll({ height: 250 });
-									});
-								</script>
-								<!-- / Javascript -->
 
 								<div class="dropdown-menu widget-messages-alt no-padding" style="width: 300px;">
 									<div class="messages-list" id="main-navbar-messages">
@@ -315,7 +242,6 @@ Use search to find needed section.
 									<a href="#" class="messages-link">MORE MESSAGES</a>
 								</div> <!-- / .dropdown-menu -->
 							</li>
-<!-- /3. $END_NAVBAR_ICON_BUTTONS -->
 
 							<li>
 								<form class="navbar-form pull-left">
@@ -342,32 +268,7 @@ Use search to find needed section.
 			</div> <!-- / #main-navbar-collapse -->
 		</div> <!-- / .navbar-inner -->
 	</div> <!-- / #main-navbar -->
-<!-- /2. $END_MAIN_NAVIGATION -->
 
-
-<!-- 4. $MAIN_MENU =================================================================================
-
-		Main menu
-		
-		Notes:
-		* to make the menu item active, add a class 'active' to the <li>
-		  example: <li class="active">...</li>
-		* multilevel submenu example:
-			<li class="mm-dropdown">
-			  <a href="#"><span class="mm-text">Submenu item text 1</span></a>
-			  <ul>
-				<li>...</li>
-				<li class="mm-dropdown">
-				  <a href="#"><span class="mm-text">Submenu item text 2</span></a>
-				  <ul>
-					<li>...</li>
-					...
-				  </ul>
-				</li>
-				...
-			  </ul>
-			</li>
--->
 	<div id="main-menu" role="navigation">
 		<div id="main-menu-inner">
 			<div class="menu-content top" id="menu-content-demo">
@@ -581,120 +482,27 @@ Use search to find needed section.
 			</div>
 		</div> <!-- / #main-menu-inner -->
 	</div> <!-- / #main-menu -->
-<!-- /4. $MAIN_MENU -->
-
 
 	<div id="content-wrapper">
 
-		<!-- Page Header -->
+		<!-- @tag:    div
+			 @class:  .page-header
+			 @autor:  Guilherme Zazu Simões
+			 @função: Define Page Header(Ícone + Título) para a Interface principal dos Módulos de Projeto/Filtros
+		-->
 		<div class="page-header">
 				<!-- Page header, center on small screens -->
 				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
-		</div><!-- / .page-header -->
+		</div>
+		<!-- / .page-header -->
 
 		<div class="row pr">
 			<div class="col-sm-12">
-
-<!-- 5. $JQUERY_VALIDATION =========================================================================
-
-				jQuery Validation
--->
-				<!-- Javascript -->
-				<script>
-					init.push(function () {
-						$("#jq-validation-phone").mask("(999) 999-9999");
-						$('#jq-validation-select2').select2({ allowClear: true, placeholder: 'Select a country...' }).change(function(){
-							$(this).valid();
-						});
-						$('#jq-validation-select2-multi').select2({ placeholder: 'Filtro...' }).change(function(){
-							$(this).valid();
-						});
-
-						// Add phone validator
-						$.validator.addMethod(
-							"phone_format",
-							function(value, element) {
-								var check = false;
-								return this.optional(element) || /^\(\d{3}\)[ ]\d{3}\-\d{4}$/.test(value);
-							},
-							"Invalid phone number."
-						);
-
-						// Setup validation
-						$("#jq-validation-form").validate({
-							ignore: '.ignore, .select2-input',
-							focusInvalid: false,
-							rules: {
-								'jq-validation-email': {
-								  required: true,
-								  email: true
-								},
-								'jq-validation-password': {
-									required: true,
-									minlength: 6,
-									maxlength: 20
-								},
-								'jq-validation-password-confirmation': {
-									required: true,
-									minlength: 6,
-									equalTo: "#jq-validation-password"
-								},
-								'jq-validation-required': {
-									required: true
-								},
-								'jq-validation-url': {
-									required: true,
-									url: true
-								},
-								'jq-validation-phone': {
-									required: true,
-									phone_format: true
-								},
-								'jq-validation-select': {
-									required: true
-								},
-								'jq-validation-multiselect': {
-									required: true,
-									minlength: 2
-								},
-								'jq-validation-select2': {
-									required: true
-								},
-								'jq-validation-select2-multi': {
-									required: false,
-									minlength: 1
-								},
-								'jq-validation-text': {
-									required: true
-								},
-								'jq-validation-simple-error': {
-									required: true
-								},
-								'jq-validation-dark-error': {
-									required: true
-								},
-								'jq-validation-radios': {
-									required: true
-								},
-								'jq-validation-checkbox1': {
-									require_from_group: [1, 'input[name="jq-validation-checkbox1"], input[name="jq-validation-checkbox2"]']
-								},
-								'jq-validation-checkbox2': {
-									require_from_group: [1, 'input[name="jq-validation-checkbox1"], input[name="jq-validation-checkbox2"]']
-								},
-								'jq-validation-policy': {
-									required: true
-								}
-							},
-							messages: {
-								'jq-validation-policy': 'You must check it!'
-							}
-						});
-					});
-				</script>
-				<!-- / Javascript -->
-
-				<!-- Seleção de Módulo -->
+				<!-- @tag:    div
+					 @class:  .uidemo-modals-alerts-info-sm - SM=Seleção Módulo
+					 @autor:  Guilherme Zazu Simões
+					 @função: Cria o Modal que possibilita - Criar Módulos em branco e Módulos Baseados em tabelas
+				-->
 				<div id="uidemo-modals-alerts-info-sm" class="modal modal-alert modal-info fade">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -721,10 +529,14 @@ Use search to find needed section.
 							</div>
 						</div> <!-- / .modal-content -->
 					</div> <!-- / .modal-dialog -->
-				</div> <!-- / .modal -->
-				<!-- / Seleção de Módulo -->
+				</div>
+				<!-- / .modal -->
 				
-				<!-- Novo Módulo Branco -->
+				<!-- @tag:    div
+					 @class:  .uidemo-modals-alerts-info-mb - MB = Módulo em Branco
+					 @autor:  Guilherme Zazu Simões
+					 @função: Cria interface padrão do Modal - Novo Módulo em Branco.
+				-->
 				<div id="uidemo-modals-alerts-info-mb" class="modal modal-alert modal-info fade">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -749,10 +561,14 @@ Use search to find needed section.
 							</div>
 						</div> <!-- / .modal-content -->
 					</div> <!-- / .modal-dialog -->
-				</div> <!-- / .modal -->
-				<!-- / Módulo em branco -->
+				</div> 
+				<!-- / .modal -->
 				
-				<!-- Módulo baseado em Tabela -->
+				<!-- @tag:    div
+					 @class:  .uidemo-modals-alerts-info-mbt - MBT = Módulo Baseado em Tabela
+					 @autor:  Guilherme Zazu Simões
+					 @função: Cria interface padrão do Modal - Novo Módulo Baseado Tabela.
+				-->
 				<div id="uidemo-modals-alerts-info-mbt" class="modal modal-alert modal-info fade">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -763,47 +579,39 @@ Use search to find needed section.
 							<hr>
 							<div class="panel-body">
 								<div class="panel-body no-padding-hr">
-								<div class="form-group no-margin-hr panel-padding-h no-padding-t no-border-t">
-									<div class="row">
-										<select class="form-control" id="jquery-select2-example">
-											<option></option>
-											<optgroup label="Tabelas de Cadastro">
-												<option value="US">Usuários</option>
-												<option value="FI">Financeiro</option>
-											</optgroup>
-											<optgroup label="Tabelas de Manutenção">
-												<option value="PM">Permissões</option>
-												<option value="MN">Manutenção</option>
-											</optgroup>
-										</select>
+									<div class="form-group no-margin-hr panel-padding-h no-padding-t no-border-t">
+										<div class="row">
+											<select class="form-control" id="jquery-select2-example">
+												<option></option>
+												<optgroup label="Tabelas de Cadastro">
+													<option value="US">Usuários</option>
+													<option value="FI">Financeiro</option>
+												</optgroup>
+												<optgroup label="Tabelas de Manutenção">
+													<option value="PM">Permissões</option>
+													<option value="MN">Manutenção</option>
+												</optgroup>
+											</select>
+										</div>
 									</div>
 								</div>
-							</div>
-							</div>
+							</div><!-- / .panel-body -->
 							<div class="modal-footer">
 								<button type="button" class="btn btn-info" data-dismiss="modal">Criar</button>
 							</div>
 						</div> <!-- / .modal-content -->
 					</div> <!-- / .modal-dialog -->
-				</div> <!-- / .modal -->
-				<!-- Módulo baseado em Tabela -->
+				</div> 
+				<!-- / .modal -->
 
-		<script>
-			init.push(function () {
-				$('#main-navbar-notifications').slimScroll({ height: 250 });
-			});
-		</script>
-		
-		<!-- Inicio Módulos Projetos -->
+		<!-- @tag:    div
+			 @class:  .row
+			 @autor:  Guilherme Zazu Simões
+			 @função: Cria interface padrão do painel Módulos de Projeto
+		-->
 		<div class="row">
 			<div class="col-md-9">
-				<!-- Acrescenta rolagem no grupo de módulos e filtros-->
-							<script>
-								init.push(function () {
-									$('.panel.colourable').slimScroll({height:'500px', alwaysVisible: true, color: '#888',allowPageScroll: true });
-								})
-							</script>
-				<div class="panel colourable" id="users">
+				<div class="panel colourable" id="modulos">
 								<div class="panel-heading">
 									<span class="panel-title">Módulos do Projeto</span>
 									<div class="panel-heading-controls chrhack">
@@ -825,7 +633,7 @@ Use search to find needed section.
 											<form action="#">
 												<div class="stat-panel text-center card effect__click">
 													<div class="stat-row">
-														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
 															<i class="fa fa-dollar"></i>&nbsp; FINANCEIRO
 														</div>
 													</div> <!-- /.statpanel -->
@@ -839,13 +647,14 @@ Use search to find needed section.
 													</div> <!-- /.card__back -->
 												</div>
 											</form>
-										</div><!-- col-md-3 -->
+										</div>
+										<!-- col-md-3 -->
 										
 										<div class="col-md-3">
 											<form action="#">
 												<div class="stat-panel text-center card effect__click">
 													<div class="stat-row">
-														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
 															<i class="fa fa-dollar"></i>&nbsp; ADMINISTRATIVO
 														</div>
 													</div> <!-- /.statpanel -->
@@ -865,10 +674,10 @@ Use search to find needed section.
 											<form action="#">
 												<div class="stat-panel text-center card effect__click">
 													<div class="stat-row">
-														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold name">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
 															<i class="fa fa-dollar"></i>&nbsp; PAGAMENTOS
 														</div>
-													</div> <!-- /.statpanel -->
+													</div><!-- /.stat-row -->
 													<div class="card__back">
 															<div class="btn-group btn-group-justified">
 																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
@@ -877,13 +686,12 @@ Use search to find needed section.
 																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
 															</div>
 													</div> <!-- /.card__back -->
-												</div>
+												</div><!-- /.statpanel -->
 											</form>
-										</div><!-- col-md-3 -->
-										
+										</div><!-- /.col-md-3 -->
 							</div><!-- /.panel-body -->
-				</div><!-- / .panel colourable-->
-			</div><!-- / .col-md-9 -->
+				</div><!-- /.panel colourable-->
+			</div><!-- /.col-md-9 -->
 			
 			<div class="col-md-3">
 				<div class="panel colourable">
@@ -894,10 +702,10 @@ Use search to find needed section.
 										<div class="btn-group btn-group-xs">
 										<button class="btn btn-xs btn-labeled btn-info" data-target="#uidemo-modals-alerts-info-sm" data-toggle="modal">
 											<span class="btn-label icon fa fa-plus"></span>Módulo</button>
-										</div><!-- / .input-group -->
+										</div><!-- /.input-group -->
 									</form>
-								</div> <!-- / .panel-heading-controls -->
-							</div> <!-- / .panel-heading -->
+								</div> <!-- /.panel-heading-controls -->
+							</div> <!-- /.panel-heading -->
 						
 					<div class="panel-body">
 						<form class="form-horizontal" id="jq-validation-form">
@@ -925,38 +733,61 @@ Use search to find needed section.
 						</form>
 					</div>
 				</div>
-			</div><!-- col-md-3 -->
-<!-- /5. $JQUERY_VALIDATION -->
-			</div>
-		</div>
+			</div><!-- / .col-md-3 -->
+		</div><!-- / .row-->
 	</div> <!-- / #content-wrapper -->
 	<div id="main-menu-bg"></div>
 </div> <!-- / #main-wrapper -->
 
-<!-- Get jQuery from Google CDN -->
+<!-- Script condicional para Internet Explorer - Importa a biblioteca JQuery do Google CDN -->
 <!--[if !IE]> -->
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">'+"<"+"/script>"); </script>
 <!-- <![endif]-->
+
+<!-- Script condicional para Internet Explorer 9 -->
 <!--[if lte IE 9]>
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">'+"<"+"/script>"); </script>
 <![endif]-->
 
 
-<!-- Pixel Admin's javascripts -->
+<!-- Importa scripts padrões do Pixel Admin -->
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/pixel-admin.min.js"></script>
 
-<!-- Flip Animation Script -->
+<!-- @autor:  Guilherme Zazu Simões
+	 @função: Importa scripts padrões para aplicação do efeito Flip de cada Módulo do Painel Módulo de Projetos
+-->
 <script src="assets/javascripts/demo.js"></script>
 <script src="assets/javascripts/fusionad.js"></script>
 
-<!-- List Filter Módulos -->
+<!-- @autor:  Guilherme Zazu Simões
+	 @função: Importa scripts padrões para aplicação dos filtros no Painel Módulos de Projeto
+-->
 <script src="assets/javascripts/list.min.js"></script>
 <script src="assets/javascripts/listFilter.js"></script>
 
 <script type="text/javascript">
 	init.push(function () {
-		// Javascript code here
+		/* @tag:    select
+		   @id:     jq-validation-select2-multi
+		   @autor:  Guilherme Zazu Simões
+		   @função: Aplica filtro para seleção de múltiplas escolhas na caixa de filtros.
+		*/
+		$('#jq-validation-select2-multi').select2({ placeholder: 'Filtro...' }).change(function(){
+							$(this).valid();
+		});
+		/* @tag:    div
+		   @class:  panel.colourable
+		   @autor:  Guilherme Zazu Simões
+		   @função: Aplica rolagem padrão no painel de Módulos de Projeto e Painel de Filtros.
+		*/
+		$('.panel.colourable').slimScroll({height:'500px', alwaysVisible: true, color: '#888',allowPageScroll: true });
+		
+		/* Define rolagem padrão para #main-navbar-notification - Pixel Admin */
+		$('#main-navbar-notifications').slimScroll({ height: 250 });
+		
+		/* Define rolagem padrão para #main-navbar-messages - Pixel Admin */
+		$('#main-navbar-messages').slimScroll({ height: 250 });
 	})
 	window.PixelAdmin.start(init);
 </script>

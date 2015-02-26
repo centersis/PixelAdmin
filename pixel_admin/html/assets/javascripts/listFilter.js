@@ -1,5 +1,2 @@
-var options = {
-  valueNames: [ 'name', 'born' ]
-};
-
-var userList = new List('users', options);
+var options = {valueNames: [ 'nome' ]};
+var userList = new List('modulos', options);
