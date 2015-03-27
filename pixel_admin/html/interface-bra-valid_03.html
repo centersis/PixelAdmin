@@ -626,22 +626,8 @@
 									</a>
 								</div> <!-- / .panel-heading -->
 								<div class="panel-collapse collapse" id="collapseOne" style="height: 0px;">
-									<div class="panel-body">
-											<div class="input-group">
-												<span class="input-group-addon">@</span>
-												<input type="text" placeholder="Username" class="form-control">
-											</div>
-											</br>
-											<div class="input-group">
-												<input type="text" class="form-control">
-												<span class="input-group-addon bg-success no-border">.00</span>
-											</div>
-											</br>
-											<div class="input-group">
-												<span class="input-group-addon bg-danger no-border">$</span>
-												<input type="text" class="form-control">
-												<span class="input-group-addon bg-info no-border">.00</span>
-											</div>
+									<div class="panel-body connectedSortable well ui-sortable" id="fields-sortable">
+											 <button id="field_id" class="btn btn-primary btn-lg btn-block ui-sortable-handle">Submeter</button>
 									</div> <!-- / .panel-body -->
 								</div> <!-- / .collapse -->
 							</div> <!-- / .panel -->
@@ -653,24 +639,30 @@
 									</a>
 								</div> <!-- / .panel-heading -->
 								<div class="panel-collapse collapse" id="collapseTwo" style="height: 0px;">
-									<div class="panel-body">
+									<div class="panel-body connectedSortable well ui-sortable" id="fields-sortable">
 										<div class="input-group">
-											<label class="checkbox-inline">
-												<input type="checkbox" class="px" checked="" value="option2" id="inlineCheckbox2"> <span class="lbl">CheckBox 1</span>
-											</label>
+											<p>
+												<label class="checkbox-inline">
+													<input type="checkbox" class="px">
+													<span class="lbl">Opt 1</span>
+												</label>
+												<label class="checkbox-inline">
+													<input type="checkbox" checked="checked" class="px">
+													<span class="lbl">Opt 2</span>
+												</label>
+												<label class="checkbox-inline">
+													<input type="checkbox" class="px">
+													<span class="lbl">Opt 3</span>
+												</label>
+											</p>
 										</div><!-- / .input-group -->
 										<hr>
-										<div class="radio">
-											<label>
-												<input type="radio" class="px" checked="" value="option1" id="optionsRadios1" name="optionsRadios">
-												<span class="lbl">Radio 1</span>
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" class="px" checked="" value="option1" id="optionsRadios1" name="optionsRadios">
-												<span class="lbl">Radio 2</span>
-											</label>
+										<div class="input-group">
+										<p>
+											<label class="radio"><input type="radio" name="styled-r2" class="px"><span class="lbl">Opção 1</span></label>
+											<label class="radio"><input type="radio" checked="checked" name="styled-r2" class="px"><span class="lbl">Opção 2</span></label>
+											<label class="radio"><input type="radio" name="styled-r2" class="px"><span class="lbl">Opção 3</span></label>
+										</p>
 										</div>
 									</div> <!-- / .panel-body -->
 								</div> <!-- / .collapse -->
@@ -684,7 +676,7 @@
 								</div> <!-- / .panel-heading -->
 								
 								<div class="panel-collapse collapse" id="collapseThree">
-									<div class="panel-body">
+									<div class="panel-body connectedSortable well ui-sortable" id="fields-sortable">
 										<div class="input-group">
 											<span class="input-group-btn">
 												<button type="button" class="btn">Enviar</button>
@@ -710,7 +702,7 @@
 								</div> <!-- / .panel-heading -->
 								
 								<div class="panel-collapse collapse" id="collapseFour">
-									<div class="panel-body">
+									<div class="panel-body connectedSortable well ui-sortable" id="fields-sortable">
 										<div class="form-group has-feedback">
 											<label for="inputDefault25" class="control-label">Campo de Texto Padrão</label>
 											<input type="text" id="inputDefault25" class="form-control">
@@ -746,7 +738,7 @@
 								</div> <!-- / .panel-heading -->
 								
 								<div class="panel-collapse collapse" id="collapseFive">
-									<div class="panel-body">
+									<div class="panel-body connectedSortable well ui-sortable" id="fields-sortable">
 										<select class="form-control form-group-margin">
 											<option>1</option>
 											<option>2</option>
@@ -774,29 +766,23 @@
 			<!-- Inicio da área tabPanel -->
 			<form action="#">
 				<div class="col-md-8">
-						<ul class="nav nav-tabs bs-tabdrop-example">
-							<li class="active"><a data-toggle="tab" href="#bs-tabdrop-tab1">Manutenção</a></li>
-							<li class=""><a data-toggle="tab" href="#bs-tabdrop-tab2">Filtros</a></li>
-							<li class=""><a data-toggle="tab" href="#bs-tabdrop-tab3">Arquivos</a></li>
-						</ul>
-						<div id="fields-draggable" class="tab-content tab-content-bordered">
-							<div id="bs-tabdrop-tab1" class="tab-pane connectedSortable ui-sortable active" id="Attributes">
-								<p></p>
-							</div>
-							<div id="bs-tabdrop-tab2" class="tab-pane connectedSortable ui-sortable"  id="InvoiceAddress">
-								<p></p>
-							</div>
-							<div id="bs-tabdrop-tab3" class="tab-pane connectedSortable ui-sortable" id="ShippingAddress">
-								<p></p>
-							</div>
+					<ul class="nav nav-tabs bs-tabdrop-example">
+						<li class="active"><a href="#manutencao" data-toggle="tab">Manutenção</a></li>
+						<li><a href="#filtros" data-toggle="tab">Filtros</a></li>
+						<li><a href="#arquivos" data-toggle="tab">Arquivos</a></li>
+					</ul>
+					<div id="fields-draggable" class="tab-content">
+						<div class="tab-pane connectedSortable ui-sortable active" id="manutencao">
+							<button id="field_industry" class="btn btn-primary btn-lg btn-block ui-sortable-handle">Enviar</button>
 						</div>
-						<!--
-						<div class="col-xs-6">
-							<div id="fields-sortable" class="connectedSortable well ui-sortable" style="min-height: 40px;">
-							</div>
+						<div class="tab-pane connectedSortable ui-sortable" id="filtros">
+							<button id="field_street1" class="btn btn-primary btn-lg btn-block ui-sortable-handle">Cadastrar</button>
 						</div>
-						-->
-						<button class="btn btn-primary btn-block">Salvar</button>
+						<div class="tab-pane connectedSortable ui-sortable" id="arquivos">
+							<button id="field_id" class="btn btn-primary btn-lg btn-block ui-sortable-handle">Confirmar</button>
+						</div>
+					</div>
+					<button class="btn btn-primary btn-block">Salvar</button>
 				</div><!-- /.col-md-8 -->
 			</form>
 			<!-- Fim da Área tabPanel -->
@@ -814,6 +800,9 @@
 <!--[if lte IE 9]>
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">'+"<"+"/script>"); </script>
 <![endif]-->
+
+<!-- Importa Script JQueryUI -->
+<script src="assets/javascripts/jquery-ui-1.9.2.custom.min.js"></script>
 
 <!-- Importa scripts padrões do Pixel Admin -->
 <script src="assets/javascripts/bootstrap.min.js"></script>
@@ -840,6 +829,34 @@
 		
 		/* Define rolagem padrão para #main-navbar-messages - Pixel Admin */
 		$('#main-navbar-messages').slimScroll({ height: 250 });
+		
+		/* @tag:    fields-sortable, manutencao, filtros, arquivos
+		   @class:  tab-content
+		   @autor:  Guilherme Zazu Simões
+		   @função: Garante Sortable entre o Painel de Componetes e as Abas (Manutenção | Filtros | Arquivos)
+		*/
+		
+		$("#fields-sortable, #manutencao" ).sortable({
+			connectWith: ".connectedSortable",
+			placeholder: "btn btn-default btn-lg btn-block",
+			cancel: ''
+		});
+		$("#fields-sortable, #filtros" ).sortable({
+			connectWith: ".connectedSortable",
+			placeholder: "btn btn-default btn-lg btn-block",
+			cancel: ''
+		});
+		$("#fields-sortable, #arquivos" ).sortable({
+			connectWith: ".connectedSortable",
+			placeholder: "btn btn-default btn-lg btn-block",
+			cancel: ''
+		});
+		$( "#fields-sortable" ).sortable({
+			update: function (event, ui) {
+				var data = $(this).sortable( "serialize");
+				console.log(data);
+			}
+		});
 	})
 	window.PixelAdmin.start(init);
 </script>
