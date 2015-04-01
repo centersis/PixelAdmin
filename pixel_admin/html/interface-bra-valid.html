@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-
-TABLE OF CONTENTS.
-
-Use search to find needed section.
-
-=====================================================
-
-|  1. $BODY                 |  Body                 |
-|  2. $MAIN_NAVIGATION      |  Main navigation      |
-|  3. $NAVBAR_ICON_BUTTONS  |  Navbar Icon Buttons  |
-|  4. $MAIN_MENU            |  Main menu            |
-|  5. $CONTENT              |  Content              |
-
-=====================================================
-
--->
-
 
 <!--[if IE 8]>         <html class="ie8"> <![endif]-->
 <!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
@@ -24,26 +6,30 @@ Use search to find needed section.
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Interfaces BRA - Módulos</title>
+	<head>
+	<title>Interfaces BRA - Consultoria</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 	<!-- Obtém fonte de texto Open Sans do Google CDN -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
 
 	<!-- Folhas de estilo padrão do Pixel Admin -->
-	<link href="assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/stylesheets/modify.css" rel="stylesheet" type="text/css">
 	
 	<!-- @autor:  Guilherme Zazu Simões
-		 @função: Importa folha de estilos padrão do efeito Sortable
+		 @função: Importa folha de estilos padrão do efeito Flip dos módulos
 	-->
-	<link href="assets/stylesheets/app.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/demo.css" rel="stylesheet" type="text/css">
 	
+	<!-- @autor:  Guilherme Zazu Simões
+		 @função: Importa folha de estilos que define comportamento padrão de elementos do painel de Módulos
+	-->
+	<link href="assets/stylesheets/modify.css" rel="stylesheet" type="text/css">
+
 	<!--[if lt IE 9]>
 		<script src="assets/javascripts/ie.min.js"></script>
 	<![endif]-->
@@ -51,19 +37,10 @@ Use search to find needed section.
 </head>
 
 <body class="theme-default main-menu-animated">
-
 <script>var init = [];</script>
-<!-- Demo script --> 
 
-<script src="assets/demo/demo.js"></script> <!-- / Demo script -->
 
 <div id="main-wrapper">
-
-
-<!-- 2. $MAIN_NAVIGATION ===========================================================================
-
-	Main navigation
--->
 	<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
 		<!-- Main menu toggle -->
 		<button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
@@ -102,36 +79,13 @@ Use search to find needed section.
 
 					<div class="right clearfix">
 						<ul class="nav navbar-nav pull-right right-navbar-nav">
-
-<!-- 3. $NAVBAR_ICON_BUTTONS =======================================================================
-
-							Navbar Icon Buttons
-
-							NOTE: .nav-icon-btn triggers a dropdown menu on desktop screens only. On small screens .nav-icon-btn acts like a hyperlink.
-
-							Classes:
-							* 'nav-icon-btn-info'
-							* 'nav-icon-btn-success'
-							* 'nav-icon-btn-warning'
-							* 'nav-icon-btn-danger' 
--->
 							<li class="nav-icon-btn nav-icon-btn-danger dropdown">
 								<a href="#notifications" class="dropdown-toggle" data-toggle="dropdown">
 									<span class="label">5</span>
 									<i class="nav-icon fa fa-bullhorn"></i>
 									<span class="small-screen-text">Notifications</span>
 								</a>
-
-								<!-- NOTIFICATIONS -->
 								
-								<!-- Javascript -->
-								<script>
-									init.push(function () {
-										$('#main-navbar-notifications').slimScroll({ height: 250 });
-									});
-								</script>
-								<!-- / Javascript -->
-
 								<div class="dropdown-menu widget-notifications no-padding" style="width: 300px">
 									<div class="notifications-list" id="main-navbar-notifications">
 
@@ -175,21 +129,11 @@ Use search to find needed section.
 								</div> <!-- / .dropdown-menu -->
 							</li>
 							<li class="nav-icon-btn nav-icon-btn-success dropdown">
-								<a href="mail.ru" class="dropdown-toggle" data-toggle="dropdown">
+								<a href="#messages" class="dropdown-toggle" data-toggle="dropdown">
 									<span class="label">10</span>
 									<i class="nav-icon fa fa-envelope"></i>
 									<span class="small-screen-text">Income messages</span>
 								</a>
-
-								<!-- MESSAGES -->
-								
-								<!-- Javascript -->
-								<script>
-									init.push(function () {
-										$('#main-navbar-messages').slimScroll({ height: 250 });
-									});
-								</script>
-								<!-- / Javascript -->
 
 								<div class="dropdown-menu widget-messages-alt no-padding" style="width: 300px;">
 									<div class="messages-list" id="main-navbar-messages">
@@ -298,7 +242,6 @@ Use search to find needed section.
 									<a href="#" class="messages-link">MORE MESSAGES</a>
 								</div> <!-- / .dropdown-menu -->
 							</li>
-<!-- /3. $END_NAVBAR_ICON_BUTTONS -->
 
 							<li>
 								<form class="navbar-form pull-left">
@@ -308,7 +251,7 @@ Use search to find needed section.
 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
-									<img src="assets/demo/avatars/1.jpg" alt="">
+									<img src="assets/demo/avatars/1.jpg">
 									<span>John Doe</span>
 								</a>
 								<ul class="dropdown-menu">
@@ -325,32 +268,7 @@ Use search to find needed section.
 			</div> <!-- / #main-navbar-collapse -->
 		</div> <!-- / .navbar-inner -->
 	</div> <!-- / #main-navbar -->
-<!-- /2. $END_MAIN_NAVIGATION -->
 
-
-<!-- 4. $MAIN_MENU =================================================================================
-
-		Main menu
-		
-		Notes:
-		* to make the menu item active, add a class 'active' to the <li>
-		  example: <li class="active">...</li>
-		* multilevel submenu example:
-			<li class="mm-dropdown">
-			  <a href="#"><span class="mm-text">Submenu item text 1</span></a>
-			  <ul>
-				<li>...</li>
-				<li class="mm-dropdown">
-				  <a href="#"><span class="mm-text">Submenu item text 2</span></a>
-				  <ul>
-					<li>...</li>
-					...
-				  </ul>
-				</li>
-				...
-			  </ul>
-			</li>
--->
 	<div id="main-menu" role="navigation">
 		<div id="main-menu-inner">
 			<div class="menu-content top" id="menu-content-demo">
@@ -564,13 +482,9 @@ Use search to find needed section.
 			</div>
 		</div> <!-- / #main-menu-inner -->
 	</div> <!-- / #main-menu -->
-<!-- /4. $MAIN_MENU -->
-
 
 	<div id="content-wrapper">
-<!-- 5. $CONTENT ===================================================================================
--->		
-				
+
 		<!-- @tag:    div
 			 @class:  .page-header
 			 @autor:  Guilherme Zazu Simões
@@ -578,7 +492,7 @@ Use search to find needed section.
 		-->
 		<div class="page-header">
 				<!-- Page header, center on small screens -->
-				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-wrench page-header-icon"></i>&nbsp;&nbsp;Manutenção de Campos dos Módulos.</h1>
+				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
 		</div>
 		<!-- / .page-header -->
 
@@ -687,6 +601,7 @@ Use search to find needed section.
 							</div>
 						</div> <!-- / .modal-content -->
 					</div> <!-- / .modal-dialog -->
+<<<<<<< HEAD
 				</div> 
 				<!-- / .modal -->
 
@@ -696,142 +611,365 @@ Use search to find needed section.
 			 @função: Cria interface padrão do painel Módulos de Projeto
 		-->
 		<div class="row">
-			<!-- Inicio da área de Componentes -->
-			<div class="col-md-4">
-				<div class="panel colourable">
+			<div class="col-md-9">
+				<div class="panel colourable" id="modulos">
+								<div class="panel-heading">
+									<span class="panel-title">Módulos do Projeto</span>
+									<div class="panel-heading-controls chrhack">
+										<form action="#">
+											<div class="input-group input-group-sm">
+												<input type="text" name="s" placeholder="Pesquisar..." class="form-control search">
+												<span class="input-group-btn">
+													<button type="submit" class="btn">
+														<span class="fa fa-search"></span>
+													</button>
+												</span>
+											</div> <!-- / .input-group -->
+										</form>
+									</div> <!-- / .panel-heading-controls -->
+								</div> <!-- / .panel-heading -->
+							
+							<div class="panel-body list">
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
+															<i class="fa fa-dollar"></i>&nbsp; FINANCEIRO
+														</div>
+													</div> <!-- /.statpanel -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+=======
+				</div> <!-- / .modal -->
+				<!-- Módulo baseado em Tabela -->
+
+		<!-- Page Header -->
+		<div class="page-header">
+				<!-- Page header, center on small screens -->
+				<h1 class="col-sm-6 text-center text-left-sm"><i class="fa fa-rocket page-header-icon"></i>&nbsp;&nbsp;Permite a criação/edição dos módulos do projeto.</h1>
+		</div><!-- / .page-header -->
+		
+		<!-- Inicio Módulos Projetos -->
+		
+		<div class="panel colourable">
 					<div class="panel-heading">
-						<span class="panel-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;  Componentes de Formulários</span>
-					</div> <!-- /.panel-heading -->
-
-					<div class="panel-body">
-						<div class="block__list block__list_words">
-							<ul id="advanced-1">
-								<li><button class="btn btn-default" type="submit">Botão</button><i class="js-remove">✖</i></li>
-								<li>
-									<label class="radio">
-										<input type="radio" class="px" name="styled-r1">
-										<span class="lbl">Radio Button</span>
-									</label><i class="js-remove">✖</i>
-								</li>
-								<li>
-									<label class="radio">
-										<input type="checkbox" class="px">
-										<span class="lbl">CheckBox</span>
-									</label><i class="js-remove">✖</i>
-								</li>
-								<li>
-									<label class="input">
-										<input type="text" class="form-control input-sm expanding-input-target" placeholder="Caixa de Texto">
-									</label><i class="js-remove">✖</i>
-									
-								</li>
-								<li>
-									<textarea class="form-control expanding-input-target" rows="3" placeholder="Caixa de Texto Múltiplas Linhas"></textarea>
-								</li>
-								<li>
-									<select class="form-control">
-										<option value="">Default select</option>
-										<option value="">Opção 1</option>
-										<option value="">Opção 2</option>
-										<option value="">Opção 3</option>
-										<option value="">Opção 4</option>
-									</select>
-								</li>
-							</ul>
-						</div>
-					</div>
+						<span class="panel-title">Módulos Projeto</span>
+						<div class="panel-heading-controls">
+							<form action="#">
+								<div class="btn-group btn-group-xs">
+								<button class="btn btn-xs btn-labeled btn-info" data-target="#uidemo-modals-alerts-info-sm" data-toggle="modal">
+									<span class="btn-label icon fa fa-plus"></span>Novo Módulo</button>
+								</div><!-- / .input-group -->
+							</form>
+						</div> <!-- / .panel-heading-controls -->
+					</div> <!-- / .panel-heading -->
 					
-				</div><!-- / .panel-colourable -->
-			</div><!-- / .col-md-4 -->
-			<!-- Fim da área de Componentes -->
+					<div class="panel-body">
+						<div class="row">
+							<!-- Acrescenta rolagem no grupo de módulos-->
+							<script>
+								init.push(function () {
+									$('.scrolling > .panel-body').slimScroll({height:150 , alwaysVisible: true, color: '#888',allowPageScroll: true });
+								})
+							</script>
+							<div class="col-md-6">
+								<div class="panel panel-info panel-dark scrolling">
+									<div class="panel-heading">
+										<span class="panel-title">Módulos Administrativos</span>
+										<div class="panel-heading-controls">
+											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+										</div>
+									</div>
+									<div class="panel-body text-xs">
+										<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+										<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+											<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+>>>>>>> parent of 1429bf8... Drag - Sortable Implementado utilizando a API do prório HTML5. Redução e Otimização de Código.
+												</div>
+											</form>
+										</div>
+<<<<<<< HEAD
+										<!-- col-md-3 -->
+										
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
+															<i class="fa fa-dollar"></i>&nbsp; ADMINISTRATIVO
+														</div>
+													</div> <!-- /.statpanel -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+=======
+											<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+>>>>>>> parent of 1429bf8... Drag - Sortable Implementado utilizando a API do prório HTML5. Redução e Otimização de Código.
+												</div>
+											</form>
+										</div><!-- col-md-3 -->
+										
+										<div class="col-md-3">
+											<form action="#">
+												<div class="stat-panel text-center card effect__click">
+													<div class="stat-row">
+														<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold nome">
+															<i class="fa fa-dollar"></i>&nbsp; PAGAMENTOS
+														</div>
+													</div><!-- /.stat-row -->
+													<div class="card__back">
+															<div class="btn-group btn-group-justified">
+																<a class="btn btn-sm" href="#" title="Editar Módulo"><i class="fa fa-pencil list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Usar como Modelo"><i class="fa fa-thumbs-up list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Excluir Módulo"><i class="fa fa-trash-o list-group-icon"></i></a>
+																<a class="btn btn-sm" href="#" title="Voltar"><i class="fa fa-arrow-left list-group-icon"></i></a>
+															</div>
+													</div> <!-- /.card__back -->
+												</div><!-- /.statpanel -->
+											</form>
+										</div><!-- /.col-md-3 -->
+							</div><!-- /.panel-body -->
+				</div><!-- /.panel colourable-->
+			</div><!-- /.col-md-9 -->
 			
-			<!-- Inicio da área tabPanel -->
-			<form action="#">
-				<div class="col-md-8">
-					<ul class="nav nav-tabs" id="uidemo-tabs-default-demo">
-						<li class="active">
-							<a data-toggle="tab" href="#uidemo-tabs-default-demo-manutencao">Manutenção</a>
-						</li>
-						<li class="">
-							<a data-toggle="tab" href="#uidemo-tabs-default-demo-filtros">Filtros</a>
-						</li>
-						<li class="">
-							<a data-toggle="tab" href="#uidemo-tabs-default-demo-arquivos">Arquivos</a>
-						</li>
-					</ul>
-
-					<div class="tab-content tab-content-bordered">
-						<div id="uidemo-tabs-default-demo-manutencao" class="tab-pane fade active in">
-							<div class="block__list block__list_words">
-								<ul id="advanced-2">
-									<li><i class="js-remove">✖</i></li>
-								</ul>
-							</div>
-						</div> <!-- / .tab-pane -->
-						<div id="uidemo-tabs-default-demo-filtros" class="tab-pane fade">
-							
-						</div> <!-- / .tab-pane -->
-						<div id="uidemo-tabs-default-demo-arquivos" class="tab-pane fade">
-							
-						</div> <!-- / .tab-pane -->
+			<div class="col-md-3">
+				<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title">Filtros</span>
+								<div class="panel-heading-controls">
+									<form action="#">
+										<div class="btn-group btn-group-xs">
+										<button class="btn btn-xs btn-labeled btn-info" data-target="#uidemo-modals-alerts-info-sm" data-toggle="modal">
+											<span class="btn-label icon fa fa-plus"></span>Módulo</button>
+										</div><!-- /.input-group -->
+									</form>
+								</div> <!-- /.panel-heading-controls -->
+							</div> <!-- /.panel-heading -->
 						
-					</div> <!-- / .tab-content -->
-					<button class="btn btn-primary btn-block">Salvar</button>
-				</div><!-- /.col-md-8 -->
-			</form>
-			<!-- Fim da Área tabPanel -->
+					<div class="panel-body">
+						<form class="form-horizontal" id="jq-validation-form">
+								<div class="form-group">
+										<select class="form-control" name="jq-validation-select2-multi" id="jq-validation-select2-multi" multiple="multiple">
+											<optgroup label="Usuarios">
+												<option value="pitons">Inserção</option>
+												<option value="cams">Exclusão</option>
+												<option value="nuts">Pesquisa</option>
+											</optgroup>
+											<optgroup label="Aquisições">
+												<option value="skis">Entrada Produtos</option>
+												<option value="skins">Venda Produtos</option>
+												<option value="poles">Negociação</option>
+											</optgroup>
+										</select>
+								</div>
+<<<<<<< HEAD
+								<hr class="panel-wide">
+									<div role="toolbar" class="btn-toolbar">
+										<div class="btn-group btn-group-justified btn-group-sm">
+											<a class="btn btn-primary" href="#">Grupo &raquo; Projeto &raquo; Módulo</a>
+										</div>
+									</div>
+								<hr class="panel-wide">
+						</form>
+					</div>
+				</div>
+			</div><!-- / .col-md-3 -->
 		</div><!-- / .row-->
-		<ul id="editable" style="display:none;">
-			<li>Оля<i class="js-remove">✖</i></li>
-			<button id="addUser">Add</button>
-		</ul>
+=======
+							</div>
+						</div>
+					</div><!-- / .panel -->
+		</div><!-- / .panel colourable -->
+		
+		<!-- Inicio Módulos Recentes -->
+		
+		<div class="panel colourable">
+					<div class="panel-heading">
+						<span class="panel-title">Módulos Recentes</span>
+						<div class="panel-heading-controls chrhack">
+							<form action="#">
+								<div class="input-group input-group-sm">
+									<input type="text" name="s" placeholder="Pesquisar..." class="form-control">
+									<span class="input-group-btn">
+										<button type="submit" class="btn">
+											<span class="fa fa-search"></span>
+										</button>
+									</span>
+								</div> <!-- / .input-group -->
+							</form>
+						</div> <!-- / .panel-heading-controls -->
+					</div> <!-- / .panel-heading -->
+					
+				<div class="panel-body">
+						<div class="row">
+							<!-- Acrescenta rolagem no grupo de módulos-->
+							<script>
+								init.push(function () {
+									$('.scrolling > .panel-body').slimScroll({ height: 150, alwaysVisible: true, color: '#888',allowPageScroll: true });
+								})
+							</script>
+							<div class="col-md-6">
+								<div class="panel panel-info panel-dark scrolling">
+									<div class="panel-heading">
+										<span class="panel-title">Módulos Administrativos</span>
+										<div class="panel-heading-controls">
+											<div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+										</div>
+									</div>
+									<div class="panel-body text-xs">
+										<div class="col-md-4">
+											<div class="panel panel-info panel-dark widget-profile card effect__click">
+												<div class="panel-heading card__front">
+													<div class="widget-profile-bg-icon"><i class="fa fa-users"></i></div>
+													<div class="widget-profile-header">
+														<span>Financeiro</span><br>
+														Gerenciar Finanças
+													</div>
+												</div> <!-- / .panel-heading -->
+												<div class="list-group card__back">
+													<a class="list-group-item no-border" href="#"><i class="fa fa-pencil list-group-icon"></i>Editar Módulo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-thumbs-up list-group-icon"></i>Usar como Modelo</a>
+													<a class="list-group-item no-border" href="#"><i class="fa fa-trash-o list-group-icon"></i>Excluir Módulo</a>
+												</div>
+											</div> <!-- /5. $PROFILE_WIDGET_LINKS_EXAMPLE --> 
+										</div>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- / .panel -->
+		</div><!-- / .panel colourable -->
+		
+>>>>>>> parent of 1429bf8... Drag - Sortable Implementado utilizando a API do prório HTML5. Redução e Otimização de Código.
 	</div> <!-- / #content-wrapper -->
 	<div id="main-menu-bg"></div>
 </div> <!-- / #main-wrapper -->
 
-<!-- Get jQuery from Google CDN -->
+<!-- Script condicional para Internet Explorer - Importa a biblioteca JQuery do Google CDN -->
 <!--[if !IE]> -->
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">'+"<"+"/script>"); </script>
 <!-- <![endif]-->
 
+<!-- Script condicional para Internet Explorer 9 -->
 <!--[if lte IE 9]>
 	<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">'+"<"+"/script>"); </script>
 <![endif]-->
 
-<!-- Pixel Admin's javascripts -->
+
+<!-- Importa scripts padrões do Pixel Admin -->
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/pixel-admin.min.js"></script>
 
-<!-- Sortable BRA Interface -->
+<!-- @autor:  Guilherme Zazu Simões
+	 @função: Importa scripts padrões para aplicação do efeito Flip de cada Módulo do Painel Módulo de Projetos
+-->
+<script src="assets/javascripts/demo.js"></script>
 
-<script src="assets/javascripts/sortable.js"></script>
-<script src="assets/javascripts/app.js"></script>
+<<<<<<< HEAD
 
+<!-- @autor:  Guilherme Zazu Simões
+	 @função: Importa scripts padrões para aplicação dos filtros no Painel Módulos de Projeto
+-->
+<script src="assets/javascripts/list.min.js"></script>
+<script src="assets/javascripts/listFilter.js"></script>
 
 <script type="text/javascript">
 	init.push(function () {
+		/* @tag:    select
+		   @id:     jq-validation-select2-multi
+		   @autor:  Guilherme Zazu Simões
+		   @função: Aplica filtro para seleção de múltiplas escolhas na caixa de filtros.
+		*/
+		$('#jq-validation-select2-multi').select2({ placeholder: 'Filtro...' }).change(function(){
+							$(this).valid();
+		});
 		/* @tag:    div
 		   @class:  panel.colourable
 		   @autor:  Guilherme Zazu Simões
-		   @função: Aplica rolagem padrão no painel de Componentes.
+		   @função: Aplica rolagem padrão no painel de Módulos de Projeto e Painel de Filtros.
 		*/
 		$('.panel.colourable').slimScroll({height:'500px', alwaysVisible: true, color: '#888',allowPageScroll: true });
-		
-		/* @tag:    div
-		   @class:  tab-content
-		   @autor:  Guilherme Zazu Simões
-		   @função: Aplica rolagem padrão no tabPane(Manutenção | Filtros | Arquivos).
-		*/
-		$('.tab-content').slimScroll({height:'434px', alwaysVisible: true, color: '#888',allowPageScroll: true });
 		
 		/* Define rolagem padrão para #main-navbar-notification - Pixel Admin */
 		$('#main-navbar-notifications').slimScroll({ height: 250 });
 		
 		/* Define rolagem padrão para #main-navbar-messages - Pixel Admin */
 		$('#main-navbar-messages').slimScroll({ height: 250 });
-		
+=======
+
+<script type="text/javascript">
+	init.push(function () {
+>>>>>>> parent of 1429bf8... Drag - Sortable Implementado utilizando a API do prório HTML5. Redução e Otimização de Código.
 	})
 	window.PixelAdmin.start(init);
 </script>
+
 </body>
 </html>
